@@ -57,64 +57,6 @@ def generate_trajectory_with_single_affordance_3d(
 
     return x, a, affordance
 
-def generate_rotational_trajectory_with_affordance_3d(
-    affordance=np.array([0.0, 0.0, 0.0]),  # Hinge point
-    radius=1.0,
-    T=10,
-    dt=0.1,
-    initial_angle_deg=0,
-    initial_angular_velocity=1.5,  # radians/sec
-    force_strength=5.0,
-    damping=0.05,
-    axis=np.array([0, 0, 1]),  # Y-axis (vertical) rotation
-    seed=42,
-):
-    np.random.seed(seed)
-    axis = axis / np.linalg.norm(axis)
-
-    # Get an orthogonal vector to define the door plane
-    if np.allclose(axis, [0, 0, 1]):
-        radial_vector = np.array([1, 0, 0]) * radius
-    else:
-        radial_vector = np.cross(axis, [0, 0, 1])
-        radial_vector = radial_vector / np.linalg.norm(radial_vector) * radius
-
-    theta = np.radians(initial_angle_deg)
-    omega = initial_angular_velocity
-
-    x = np.zeros((T, 3))  # position
-    v = np.zeros((T, 3))  # linear velocity
-    a = np.zeros((T, 3))  # linear acceleration
-
-    # Initial position and velocity from angle and angular velocity
-    def get_rotated_vector(angle):
-        return (
-            radial_vector * np.cos(angle) +
-            np.cross(axis, radial_vector) * np.sin(angle) +
-            axis * np.dot(axis, radial_vector) * (1 - np.cos(angle))
-        )
-
-    x[0] = affordance + get_rotated_vector(theta)
-    v[0] = np.cross(axis, x[0] - affordance) * omega  # Tangential velocity
-
-    for t in range(1, T):
-        rel_pos = x[t - 1] - affordance
-        tangential_dir = np.cross(axis, rel_pos)
-        tangential_dir /= np.linalg.norm(tangential_dir) + 1e-8
-
-        # Centripetal-like force pulling toward the hinge
-        force = -force_strength * rel_pos + 0.0 * tangential_dir  # optionally add torque-like push
-        force -= damping * v[t - 1]  # damping
-
-        a[t - 1] = force
-        v[t] = v[t - 1] + a[t - 1] * dt
-        x[t] = x[t - 1] + v[t] * dt
-
-    # Recalculate acceleration with better estimates
-    v = np.gradient(x, dt, axis=0)
-    a = np.gradient(v, dt, axis=0)
-
-    return x, a, affordance
 
 def evaluate_method_over_seeds(method='force_residual', n_seeds=10, visualize_last=True):
     errors = []
@@ -228,8 +170,6 @@ def visualize_run(x, a, true_a, p, p_path, method, score, error):
 
 
 
-
-
 def evaluate_mean_std_over_T(method='force_residual', T_max=100, n_seeds=50):
     T_list = list(range(1, T_max + 1))
     error_matrix = []
@@ -293,8 +233,6 @@ def evaluate_mean_std_over_T(method='force_residual', T_max=100, n_seeds=50):
 if __name__ == '__main__':
     #x, a, true_a = generate_trajectory_with_single_affordance_3d()
 
-    # x, a, true_a = generate_rotational_trajectory_with_affordance_3d()
-
     # # Fit a single force point
     #fitter = ForcePointFitter3D(x, a)
     # p, score, p_path, method = fitter.fit_one_point(method='force_residual') # or 'force_residual', 'cosine', 'quadratic', 'hybrid'
@@ -346,5 +284,6 @@ if __name__ == '__main__':
     # Choose method: 'force_residual', 'cosine', 'quadratic', 'hybrid', 'inverse_dynamics'
     evaluate_method_over_seeds(method='force_residual', n_seeds=50)
     #evaluate_mean_std_over_T(method="force_residual")
+
 
 
