@@ -340,10 +340,11 @@ if __name__ == '__main__':
     # ax.set_title(f'Fitted Point ({method}, Score = {score:.3f})'), Error (distance to GT): {error:.4f}')
     # ax.legend()
     # plt.draw()
-    # print("Step 4: Fitted point and path shown. Done!")
+    # print("Step 4: Fitted point and path.")
     # plt.show()
     
     # Choose method: 'force_residual', 'cosine', 'quadratic', 'hybrid', 'inverse_dynamics'
     evaluate_method_over_seeds(method='force_residual', n_seeds=50)
     #evaluate_mean_std_over_T(method="force_residual")
+
 
