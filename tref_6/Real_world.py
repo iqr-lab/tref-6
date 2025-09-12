@@ -44,7 +44,7 @@ def project_point_to_image(p_final: np.ndarray):
     rvec, _ = cv2.Rodrigues(R_base_to_cam)
     tvec = T_base_to_cam.reshape(3, 1)
 
-    # --- Load image  hook_first_frame open_door_first_frame---
+    # --- Load image---
     img_path = '../demonstrations/door_open/image.jpg'
     img = cv2.imread(img_path)
     if img is None:
@@ -226,7 +226,6 @@ def generalize_trajectory_via_influence(
     scale_d = dist_goal_new / dist_goal_demo
     scale_n = dist_inf_new / dist_inf_demo if dist_inf_demo > 1e-6 else 0.0
 
-    # Direction for deviation (same side as influence point)
     v_inf_new = influence_new - start_new
     n_new = v_inf_new - np.dot(v_inf_new, d_new_norm) * d_new_norm
     if np.linalg.norm(n_new) < 1e-6:
@@ -242,7 +241,7 @@ def generalize_trajectory_via_influence(
 
     return traj_new
 
-# --- Load and preprocess the trajectory hook_red_with_gripper.json open_door.json---
+# --- Load and preprocess the trajectory---
 with open('../demonstrations/door_open/trajectory.json', 'r') as f:
     data = json.load(f)
 
@@ -304,4 +303,5 @@ traj_new = generalize_trajectory_via_influence(
 
 #visualize_run_one_points(x, p_final, p_path, switch_step, traj_new, influence_new)
 project_point_to_image(p_final)
+
 
