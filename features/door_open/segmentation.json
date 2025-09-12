@@ -1,0 +1,46 @@
+{
+    "image_path": "notebooks/images/door_open.jpg",
+    "annotations": [
+        {
+            "class_name": "little metal door handle",
+            "bbox": [
+                309.9718933105469,
+                262.0119934082031,
+                321.61822509765625,
+                281.5356140136719
+            ],
+            "segmentation": {
+                "size": [
+                    480,
+                    640
+                ],
+                "counts": "Y`b49f>7J1O000001O4L6I^Xe4"
+            },
+            "score": [
+                0.86328125
+            ]
+        },
+        {
+            "class_name": "thin blue seam",
+            "bbox": [
+                415.45098876953125,
+                204.02732849121094,
+                426.5434265136719,
+                326.4994201660156
+            ],
+            "segmentation": {
+                "size": [
+                    480,
+                    640
+                ],
+                "counts": "`TT6b3];4M000000oLkD]O73GP2i\\U3"
+            },
+            "score": [
+                0.8671875
+            ]
+        }
+    ],
+    "box_format": "xyxy",
+    "img_width": 640,
+    "img_height": 480
+}

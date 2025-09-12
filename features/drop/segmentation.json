@@ -1,0 +1,46 @@
+{
+    "image_path": "notebooks/images/image.jpg",
+    "annotations": [
+        {
+            "class_name": "red cube",
+            "bbox": [
+                411.252685546875,
+                346.89227294921875,
+                443.9609375,
+                379.3573913574219
+            ],
+            "segmentation": {
+                "size": [
+                    480,
+                    640
+                ],
+                "counts": "Q_Q6`0^>5L2O2N0O2O1O001O00001O000000001OO1000001O00001O001O001N2N3M<^Oh`k2"
+            },
+            "score": [
+                0.9453125
+            ]
+        },
+        {
+            "class_name": "vetical thin red pin",
+            "bbox": [
+                392.8350830078125,
+                290.8021240234375,
+                403.2936096191406,
+                331.4537048339844
+            ],
+            "segmentation": {
+                "size": [
+                    480,
+                    640
+                ],
+                "counts": "Xoh5k01WOn=S1L1O0O11O1O2M5Jfi^3"
+            },
+            "score": [
+                0.91015625
+            ]
+        }
+    ],
+    "box_format": "xyxy",
+    "img_width": 640,
+    "img_height": 480
+}
