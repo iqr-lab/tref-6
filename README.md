@@ -2,9 +2,9 @@
 
 [[Paper]](https://arxiv.org/pdf/2509.00310)
 
-[Yuxuan Ding](),
-[Shuangge Wang](),
-[Tesca Fitzgerald]()
+[Yuxuan Ding](https://github.com/EasonDi),
+[Shuangge Wang](https://github.com/wshuangge),
+[Tesca Fitzgerald](https://www.tescafitzgerald.com/)
 
 Yale University
 
