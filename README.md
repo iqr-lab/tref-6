@@ -1,18 +1,13 @@
-# TReF-6: Inferring Task-Relevant Frames from a Single Demonstration
+# TReF-6: Inferring Task-Relevant Frames from a Single Demonstration (https://arxiv.org/pdf/2509.00310)
 
-[[Paper]](https://arxiv.org/pdf/2509.00310)
-
-[Yuxuan Ding](https://github.com/EasonDi),
-[Shuangge Wang](https://github.com/wshuangge),
-[Tesca Fitzgerald](https://www.tescafitzgerald.com/)
+[Yuxuan Ding](https://github.com/EasonDi), [Shuangge Wang](https://github.com/wshuangge), [Tesca Fitzgerald](https://www.tescafitzgerald.com/)
 
 Yale University
 
-TReF-6 is a framework for **one-shot skill generalization** in robot manipulation.  
-It infers a **task-relevant 6-DoF frame** from a single demonstration, enabling motion primitives (e.g., DMPs) to adapt robustly across novel object poses and scene configurations.
-
 <img src="media/pipeline.png" alt="drawing" width="100%"/>
 
+TReF-6 is a framework for **one-shot skill generalization** in robot manipulation.  
+It infers a **task-relevant 6-DoF frame** from a single demonstration, enabling motion primitives (e.g., DMPs) to adapt robustly across novel object poses and scene configurations.
 
 ---
 
