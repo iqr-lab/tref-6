@@ -1,4 +1,4 @@
-# TReF-6: Inferring Task-Relevant Frames from a Single Demonstration
+# [TReF-6: Inferring Task-Relevant Frames from a Single Demonstration](https://arxiv.org/pdf/2509.00310)
 
 [[Paper]](https://arxiv.org/pdf/2509.00310)
 
