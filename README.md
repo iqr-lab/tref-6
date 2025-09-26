@@ -80,8 +80,7 @@ Logs include metrics, rollout videos, and checkpointed models.
 
 ## 🧾 License
 
-This project is released under the **MIT License**.  
-See [LICENSE](LICENSE) for details.
+This project is released under the **MIT License**. See [LICENSE](LICENSE) for details.
 
 ---
 
