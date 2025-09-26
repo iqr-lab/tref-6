@@ -2,6 +2,12 @@
 
 [[Paper]](https://arxiv.org/pdf/2509.00310)
 
+[Yuxuan Ding]()<sup>1</sup>,
+[Shuangge Wang]()<sup>1</sup>,
+[Tesca Fitzgerald]()<sup>1</sup>,
+
+<sup>1</sup>Yale University
+
 TReF-6 is a framework for **one-shot skill generalization** in robot manipulation.  
 It infers a **task-relevant 6-DoF frame** from a single demonstration, enabling motion primitives (e.g., DMPs) to adapt robustly across novel object poses and scene configurations.
 
