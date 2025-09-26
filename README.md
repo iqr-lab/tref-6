@@ -66,25 +66,6 @@ tref-6/
 
 ---
 
-## 🧠 Method Overview
-
-TReF-6 consists of three stages:
-
-1. **Influence Point Inference**  
-   Optimize a *directional consistency score* to find the spatial point best explaining trajectory dynamics.
-
-2. **Semantic Grounding**  
-   Align the inferred point with visual features identified by a VLM, then extract a full 6-DoF frame using surface normals and interaction directions.
-
-3. **DMP Reparameterization**  
-   Transform the trajectory into the new frame and fit DMPs over relative motions, allowing reuse in new scenes.
-
-```text
-Trajectory → Influence Point → Local Frame → DMP Fitting → Generalized Motion
-```
-
----
-
 ## 📊 Logging & Visualization
 
 TReF-6 integrates with [Weights & Biases](https://wandb.ai):
