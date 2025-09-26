@@ -5,7 +5,7 @@
 TReF-6 is a framework for **one-shot skill generalization** in robot manipulation.  
 It infers a **task-relevant 6-DoF frame** from a single demonstration, enabling motion primitives (e.g., DMPs) to adapt robustly across novel object poses and scene configurations.
 
-<embed src="media/pipeline" type="application/pdf" width="100%" height="6000px" />
+<embed src="media/pipeline.pdf" type="application/pdf" width="100%" height="6000px" />
 
 
 ---
