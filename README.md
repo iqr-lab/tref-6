@@ -1,4 +1,5 @@
-## [TReF-6: Inferring Task-Relevant Frames from a Single Demonstration for One-Shot Skill Generalization](https://arxiv.org/pdf/2509.00310)
+# <u>[TReF-6: Inferring Task-Relevant Frames from a Single Demonstration for One-Shot Skill Generalization](https://arxiv.org/pdf/2509.00310)</u>
+
 
 [Yuxuan Ding](https://github.com/EasonDi), [Shuangge Wang](https://github.com/wshuangge), [Tesca Fitzgerald](https://www.tescafitzgerald.com/)
 
