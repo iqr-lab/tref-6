@@ -84,7 +84,7 @@ visualization/              # Intermediate step visualization
 
 ---
 
-## 📊 Logging & Visualization
+## 📊 Visualization
 
 TReF-6 integrates with [Weights & Biases](https://wandb.ai):
 
