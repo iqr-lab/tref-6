@@ -29,6 +29,13 @@ For development:
 pip install -e ".[dev]"
 ```
 
+Dependencies installation:
+
+Install **KINOVA KORTEX API** following [this guide](https://github.com/Kinovarobotics/Kinova-kortex2_Gen3_G3L)
+
+Install **Grounded SAM 2** following [this guide](https://github.com/IDEA-Research/Grounded-SAM-2)
+
+
 ---
 
 ## 🚀 Quick Start
