@@ -51,7 +51,18 @@ python examples/eval.py --checkpoint outputs/.../latest.ckpt --task door_opening
 ## 📂 Repository Structure
 
 ```
-tref-6/
+demonstrations/             # Task definitions (datasets)
+├── door_open/
+├── drop/                  
+└── wiping/
+docs/                       # Documentation
+features/                   # Extracted local features & visualizations for each task
+├── door_open/
+├── drop/                  
+└── wiping/
+media/                      # Pipeline picture
+simulation/                 # Evaluation scripts in simulated environment
+tref-6/                     # Core library
 ├── tref/                   # Core library
 │   ├── tasks/              # Task definitions (datasets, environments)
 │   ├── policies/           # Policy abstractions (e.g., DMPs)
@@ -61,6 +72,7 @@ tref-6/
 ├── examples/               # Training/evaluation scripts
 ├── tests/                  # Unit tests
 └── docs/                   # Documentation
+visualization/              # Intermediate step visualization
 ```
 
 ---
