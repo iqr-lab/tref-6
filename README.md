@@ -40,17 +40,33 @@ Install **Grounded SAM 2** following [this guide](https://github.com/IDEA-Resear
 
 ## 🚀 Quick Start
 
-Run a demo in simulation:
+**Collect data:**
 
 ```bash
-python examples/run_demo.py --task door_opening --policy dmp
+python tref_6/gravity_compensation.py
 ```
 
-Train and evaluate with configuration files:
+**Evaluate in simulation:**
 
+
+For single influence point detection in 2D scenarios:
 ```bash
-python examples/train.py --config-name door_opening_baseline.yaml
-python examples/eval.py --checkpoint outputs/.../latest.ckpt --task door_opening
+python simulation/test_2d.py
+```
+
+For single influence point detection in 3D scenarios:
+```bash
+python simulation/test_3d.py
+```
+
+For sequential influence points detection in 3D scenarios:
+```bash
+python simulation/test_sequential.py
+```
+
+**Run a demo in real world:**
+```bash
+python tref_6/run.py
 ```
 
 ---
@@ -69,7 +85,7 @@ features/                   # Extracted local features & visualizations for each
 └── wiping/
 media/                      # Pipeline picture
 simulation/                 # Evaluation scripts in simulated environment
-tref-6/                     # Core library
+tref_6/                     # Core library
 ├── tref/                   # Core library
 │   ├── tasks/              # Task definitions (datasets, environments)
 │   ├── policies/           # Policy abstractions (e.g., DMPs)
@@ -85,14 +101,20 @@ visualization/              # Intermediate step visualization
 ---
 
 ## 📊 Visualization
-
-TReF-6 integrates with [Weights & Biases](https://wandb.ai):
-
+To visualize the score landscape of Directional Consistency Score on an example trajectory:
 ```bash
-wandb login
+python visualization/score_landscape.py
 ```
 
-Logs include metrics, rollout videos, and checkpointed models.
+To visualize the detected influence point on the image:
+```bash
+python visualization/extract_feature.py
+```
+
+To visualize the generated trajectory:
+```bash
+python visualization/visualize_trajectory.py
+```
 
 ---
 
